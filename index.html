@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Pagina de javascript</title>
+		<link rel="stylesheet" href="css/main.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+		<!--<link rel="text/javascript" href="js/main.js">-->
+	</head>
+	<body class="is-preload">
+			<div id="wrapper">
+			<h1 align="center" style="color: blue">Ingreso y suma de n Números</h1>		
+							</section>
+					</section>
+
+					<div id="main">
+							<article class="post">
+<div align="center">
+<!--<form id="miForm">-->
+<input type="" name="campo 1" id="Numero" required> <!--en este caso no es necesario el "required"-->
+<!--</form>-->
+<br>
+<br>
+<input type="button" name="botón" value="sumar" onclick="Suma();">
+<input type="button" name="botón" value="limpiar" onclick="limpiar();" >
+<input type="button" name="botón" value="agregar numero" onclick="Agregar_numero();" >
+<input type="button" name="botón" value="numero más alto" onclick="Numero_mas_alto();" >
+<br>
+<br>
+
+
+<script type="text/javascript">
+
+var APA = [];
+var resultado = 0;
+
+function Agregar_numero(){
+if (document.getElementById('Numero').value === ""){
+	alert("El campo esta vacio");
+	var num=parseInt(document.getElementById('Numero').value);
+	//if (num == false){ //no lo convierte en 0
+	//num = 0;
+	//}
+	APA.push(num);
+	document.getElementById("Numero").value= "";
+	num=0;
+} else{
+	var num=parseInt(document.getElementById('Numero').value);
+	//if (num == false){ //no lo convierte en 0
+	//num = 0;
+	//}
+	APA.push(num);
+	document.getElementById("Numero").value= "";
+	num=0;
+}
+}
+
+
+function Suma(){
+if (APA.length === 0){
+	alert("El array esta vacio");
+} else{
+	//public static void main(String[] args){
+	for(var i=0;i<APA.length;i++){
+	resultado += APA[i];
+	//resultado = 1 + resultado
+}
+alert(+resultado);
+resultado = 0
+}
+}
+
+function Numero_mas_alto(){
+APA.sort(function(a, b) {
+  return a - b;
+});
+console.log(APA);
+let ultimo = APA[APA.length - 1]
+alert(+ultimo);
+//spread operator
+}
+
+function limpiar(){
+APA = []; 
+document.getElementById("Numero").value= "";
+//document.getElementById("miForm").reset();
+}
+
+
+</script>
+
+</div>
+							</article>
+				</div>	
+	</body>
+</html>
+
